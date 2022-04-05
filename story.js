@@ -62,93 +62,47 @@ const texts = [
       A: " ",
       B: " ", 
       Alive: false}, 
-  ],
-
-   //Level 4
-   [
-    // Iteration 4.1
-    {text: "You head east and come to a crossroad.",
-     A: "Left",  // --> iteration 5.1
-     B: "Right",  // --> iteration 5.2
-     Alive: true},
-     
-
-    // Iteration 4.2
-    {text: "You run as fast as you can and finally outrun them. You come to a crossroad. Which way do you choose? ",
-    A: "Left",  // --> iteration 5.1
-    B: "Right",  // --> iteration 5.2
-     Alive: true}, 
-
-    // Iteration 4.3
-    {text: "You fight bravely but you die.",
-      A: " ",
-      B: " ", 
-      Alive: false}, 
-
-  ],
-   //Level 5
-   [
-    // Iteration 5.1
-    {text: "You turn left and reach the port. Well done so far! You now the island must be straight ahead of you.",
-     A: "I charter a boat and head to the island",  // --> iteration 6.1
-     B: "I try to swim across.",  // --> iteration 6.2
-     Alive: true},
-     
-
-    // Iteration 5.2
-    {text: "You turn right and reach the city again. You are lost... Either you head back to the crossroad or try to find a faster way to a port",
-    A: "Go back",  // --> iteration 6.3
-    B: "Continue",  // --> iteration 6.4
-     Alive: true}, 
-
-  ],
-     //Level 6
-     [
-        // Iteration 6.1
-        {text: "Congrats! You reach the island. There is a small community, which is happy to have a new member. You live a happy life!",
-         A: " ", 
-         B: " ",  
-         Alive: true},
-         
-    
-        // Iteration 6.2
-        {text: "Oh no! You were defintely to confident. You struggle enormesly",
-        A: "Call for help and try to pull through",  // --> iteration 7.1
-        B: "Try to swim back. Maybe its not to late",  // --> iteration 7.2
-         Alive: true}, 
-
-         // Iteration 6.3
-        {text: "You turn back  and reach the port eventuelly . Well done so far! You now the island must be straight ahead of you. You find a boat and start your successful jouney to the island. You are safe!",
-        A: " ", 
-        B: " ", 
-         Alive: true}, 
-
-            // Iteration 6.4
-        {text: "Oh no! You were defintely to confident. You meet a zombie group and become one of them. Game over",
-        A: " ", 
-        B: " ", 
-         Alive: false }, 
-    
-      ],
-
-       //Level 7
-     [
-        // Iteration 7.1
-        {text: "Congrats!someone on the island hears your call and rescues you. There is a small community, which is happy to have a new member. You live a happy life!",
-         A: " ", 
-         B: " ",  
-         Alive: true},
-         
-    
-        // Iteration 7.2
-        {text: "Well on the shore back you see the zombies already waiting for you. You become one of them",
-        A: "",  
-        B: "", 
-         Alive: false}, 
-
-      ],
+  ]
 
 ];
+
+
+var advanceTo = function(s) {
+    changeText(s.text)
+  };
+
+
+var scenario = {
+    one: {
+      text: "You have finally decided to take your dog out for a walk. You smile and pat your trusty companion's head. What the dog's name?\n",
+    },
+    two: {
+      text: "Your dog yanks at the leash. You hear dogs barking and see an old abandoned house. Strangely, the door is wide open. What do you want to do?",
+      buttons: [["Turn and run", "advanceTo(scenario.three)"],["Enter The House", "advanceTo(scenario.four)"]]
+    },
+    three: {
+      image: "https://1.bp.blogspot.com/-83pWE4JxQxM/ViiOd_7nGTI/AAAAAAAADUg/yCJ8iAB-gMY/s1600/postapoc5.jpg",//"https://s4.postimg.org/t1g20apst/261819008_d4316c1bdf_o.jpg",
+      text: "A wild gang of rabid dogs are gaining on you. Against your better judgement you enter the creepy house for saftey. Your dog is whincing and may be injured.",
+      buttons: [["continue", "advanceTo(scenario.four)"]]
+    },
+      four: {
+      image: "https://s6.postimg.org/kz5m1cnkh/2919478782_c343d14be6_b.jpg",
+      text: "Your dog has run, barking loudly, into the basement. You wonder what's down there. The door jammed when you slammed it behind you. You are going to need something to pry it back open",
+      buttons: [["Follow your Dog Downstairs", "advanceTo(scenario.five)"],["Search the Kitchen for a knife", "advanceTo(scenario.five)"]]
+    },
+      five: {
+      image: "https://s6.postimg.org/kz5m1cnkh/2919478782_c343d14be6_b.jpg",
+      text: "TO BE CONTINUED...",
+  
+    },
+    
+  };
+
+
+  
+  
+  //this is the code that starts the game
+  advanceTo(scenario.one);
 
 class Button {
   constructor(iterationX, iterationY, option) {
@@ -162,7 +116,7 @@ class Button {
 
     if(this.option === "A"){
         console.log(this.data[ this.iterationX][this.iterationY].A);
-        document.querySelector("#btn-A").value = this.data[ this.iterationX][this.iterationY].A
+        //document.querySelector("#btn-A").value = this.data[ this.iterationX][this.iterationY].A
         document.querySelector("#btn-B").value = this.data[ this.iterationX][this.iterationY].B
         document.querySelector(".text").innerText = this.data[ this.iterationX][this.iterationY].text
 
