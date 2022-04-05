@@ -9,19 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-<link rel="icon" href="/assets/ufo.png">
-<title>Alien Attack</title>
+<link rel="icon" href="/assets/living-dead.png">
+<title>Zombie Escape</title>
 </head>
 
 <body>
+  
+
+
 
     <div class="main-container">
+      
         <div class="container">
             <div class="container-up">
                 <div class="map-container"> </div>
                 <div class="map">
-                  <h1>Map</h1>  
-                  <hr>
+                    <img id="player-img" src="assets/player.png">
                 </div>
 
 
@@ -40,26 +43,38 @@
             </div>
             <div class="container-down">
                 <div class="text-field">
-                    <div class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                    <div id="images">
+                    </div>
+                    <div id="text">
                     </div>
                 </div>
             </div>
             <div class="container-down-btn">
                 <div class="btn-field">
-                    <input type="button" value="Button A" class="btn" id="btn-A"></input>
-                    <input type="button" value="Button B" class="btn" id="btn-B"></input>
+                    <input id="input"  placeholder='Type Your Name and Enter to Begin'>
+                    <div id="buttonBox">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
    
+   
+
+
+
+
+
     </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
     <script src="inventory.js"></script>
-    <script src="map.js"></script>
+    <script src="story.js"></script>
     <script src="player.js"></script>
-    <script src="text-game.js"></script>
+    <script src="game.js"></script>
+
 </body>
 
 </html>
