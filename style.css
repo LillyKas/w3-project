@@ -1,7 +1,7 @@
 html{
     font-family: 'Montserrat', sans-serif;
 font-family: 'Roboto', sans-serif;
-overflow:hidden;
+overflow: hidden;
 
 }
 
@@ -107,7 +107,16 @@ margin-top: -180px;
     height: 100%; 
     width: 200px;
    border-radius: 20px;  
+   display: flex;
+   justify-content:center;
+   align-items: flex-start;
    
+}
+
+.inventoryImg{
+    width: 150px;
+    height: 25px;
+    margin: 2px;
 }
 
  .life-container{
@@ -122,7 +131,27 @@ margin-top: -180px;
     width: 50px;
     border-radius: 20px; 
    margin-right: 5px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
 } 
+
+.lifeImg{
+    width: 40px;
+    height: 15px;
+    margin: 2px;
+}
+
+.lifeItem{
+
+    background-image: url("/assets/star.png");
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+}
 
 h1{
     color: white;
@@ -170,21 +199,20 @@ hr{
     display: flex;
     justify-content:center;
     align-items: center;
-
- 
 }
 
 
 
   
   input {
-    width: 100%;
+    width: 300px;
     height: 30px;
     text-align:center;
     font-size: 1em;
-    margin-top:15px;
- 
-  
+    margin-top:5px;
+    border-color:rgb(8, 66, 21);
+    font-size: 16px;
+    border-radius: 20px;
   }
   
   #buttonBox {
@@ -210,6 +238,7 @@ hr{
 
 
 
+
 .zombie-div{
 
     display: flex;
@@ -223,7 +252,7 @@ hr{
   .zombie{
       width: 250px;
       height: auto;
-      padding-left: 50px;
+      padding-left: 350px;
       margin-right: -70px;
       z-index: 1;
       
