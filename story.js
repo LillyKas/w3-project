@@ -66,17 +66,18 @@ let advanceTo = function(s) {
 let death = function(){
  
   let random = prompt("Please enter a number between 1 and 5");
-  let number = Math.trunc(Math.random()*100)
+  let number = Math.trunc(Math.random()*5)
   console.log( random + "and" + number)
   if (random == number) {
-  
+   
     advanceTo(scenario.ten);
+    alert("yay you are lucky! The zombies are distracted by a distant sound and leave you alone. You can continue your journey!")
    
   } else if(lifeCount >= 0){
       console.log("hey")
-
-      elements.removeChild(lifeEl)
-      // advanceTo(scenario.death);
+      alert("Oh no no no! The zombies break through the door and you become one of them....")
+      //elements.removeChild(lifeEl)
+      advanceTo(scenario.death);
     
   }
 }
@@ -171,7 +172,7 @@ let scenario = {
   twelve: {
     image: "/assets/Cat-twelvethScenario.png",
     text: "You turn right and reach the city again. You are lost... Either you head back to the crossroad or try to find a faster way to a port",
-    buttons: [["Go back", "advanceTo(scenario.fifteen)"],["Continue", "advanceTo(scenario.sixteen)"]],
+    buttons: [["Go back", "advanceTo(scenario.ten)"],["Continue", "advanceTo(scenario.sixteen)"]],
     inventory: "",
   },
 
@@ -214,14 +215,14 @@ let scenario = {
   eighteen: {
     image: "/assets/Cat-eighteenthScenario.png",
     text: "Well on the shore back you see the zombies already waiting for you. Either you become one of them or you will be set back to the crossroad. ",
-    buttons: [["Your fade as a zombie awaits you", "death()"]],
+    buttons: [["See if the fade as a zombie awaits you", "death()"]],
     inventory: "",
   },
 
   death: {
     image: "/assets/gameOver.png",
     text: "GAME OVER",
-    buttons: [["Start AGain", "location.reload();"]],
+    buttons: [["Start Again", "location.reload();"]],
     inventory: "",
   }
   
