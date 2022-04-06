@@ -73,21 +73,18 @@ let death = function(){
     advanceTo(scenario.ten);
    
   } else if(lifeCount >= 0){
-    console.log("hey")
+      console.log("hey")
 
-   elements.removeChild(lifeEl)
-   death()
-   // advanceTo(scenario.death);
+      elements.removeChild(lifeEl)
+      // advanceTo(scenario.death);
     
   }
 }
 
 let fight = function(){
 
-
-  console.log("function läuft " )
   if(inventoryState) {
-    console.log("food or weapon fit")
+    
     inventory.innerHTML = ""
     advanceTo(scenario.ten)
 
