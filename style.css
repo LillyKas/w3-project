@@ -14,7 +14,7 @@ body{
     color: white;
     background-color: #24173d;
     ;
-    font-size: 1.6em;
+    font-size: 1em;
     margin-left: 30%;
     margin-right:30%;
 
@@ -108,8 +108,9 @@ margin-top: -180px;
     width: 200px;
    border-radius: 20px;  
    display: flex;
-   justify-content:center;
-   align-items: flex-start;
+   flex-direction: column;
+   justify-content:flex-start;
+   align-items: center;
    
 }
 
@@ -177,7 +178,7 @@ hr{
 
 .text-field{
     width:1000px;
-    height: 100px;
+    height: 50px;
     border-radius: 20px;
     background-color: #352554;
     display: flex;
@@ -190,6 +191,7 @@ hr{
 
 .text{
     color: white;
+    font-size: 16px;
 }
 
 .container-down-btn{
@@ -252,7 +254,7 @@ hr{
   .zombie{
       width: 250px;
       height: auto;
-      padding-left: 350px;
+      padding-left: 50px;
       margin-right: -70px;
       z-index: 1;
       
