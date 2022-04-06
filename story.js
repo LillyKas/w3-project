@@ -8,6 +8,7 @@ let lifeCount = 4;
 let lifeEl = document.getElementById('lifeEl');
 let elements = document.getElementById('elements');
 let playerName;
+let inventoryState = false;
 
 input.addEventListener("keypress", setName);
 
@@ -35,6 +36,11 @@ const changeText = function(words) {
 
 const changeInventory = function(inv) {
   inventory.innerHTML += inv ;
+  if(inv === "🥫🥫🥫" || inv === "🗡️🗡️🗡️" ){
+    inventoryState = true  
+    console.log(inventoryState + "läuft")
+  }
+  
 };
 
 
@@ -70,13 +76,27 @@ let death = function(){
     console.log("hey")
 
    elements.removeChild(lifeEl)
-   console.log(elements.childNodes)
- 
+   death()
    // advanceTo(scenario.death);
     
   }
 }
 
+let fight = function(){
+
+
+  console.log("function läuft " )
+  if(inventoryState) {
+    console.log("food or weapon fit")
+    inventory.innerHTML = ""
+    advanceTo(scenario.ten)
+
+  } else {
+
+    advanceTo(scenario.death)
+  }
+  
+}
 
 let scenario = {
   one: {
@@ -132,7 +152,7 @@ let scenario = {
   nine: {
     image: "/assets/Cat-ninethScenario.png",
     text: "You lay down to sleep. In the night you hear disturbig noises. The hut was a mistake. You are surronded by zombies with no chance to esacpe. Oh poor you!",
-    buttons: [["Now your fade is in your hands. Spin to find out", "death()"]],
+    buttons: [["Now the fade decides if you can continue or die", "death()"]],
     inventory: "",
   },
 
@@ -140,7 +160,8 @@ let scenario = {
     image: "/assets/Cat-tenthScenario.png",
     text: "You start walking and come to a crossroad.",
     buttons: [["Left", "advanceTo(scenario.eleven)"],["Right", "advanceTo(scenario.twelve)"]],
-    inventory: "",
+    inventory: "", 
+    
   },
 
   eleven: {
@@ -172,7 +193,7 @@ let scenario = {
   },
 
   fifteen: {
-    image: "/assets/Cat-fifteenthScenario.png",
+    image: "/assets/Cat-thirteenthScenario.png",
     text: "You turn back  and reach the port eventuelly . Well done so far! You now the island must be straight ahead of you. You find a boat and start your successful jouney to the island. You are safe!",
     buttons: [["Start Again", "location.reload();"]],
     inventory: "",
@@ -181,7 +202,7 @@ let scenario = {
   sixteen: {
     image: "/assets/Cat-sixteenthScenario.png",
     text: "Oh no! You were defintely to confident. You meet a zombie group. What do you do? If you have food in your inventory you can distract the zombies with it and run away back to the crossroad. If you have a weapon you can enter the fight and suceed",
-    buttons: [["Let´s see if a fade as a zombie awaits you?", "death()"]],
+    buttons: [["Let´s see if a fade as a zombie awaits you?", "fight()"]],
     input: "hhh",
     inventory: "",
   },
