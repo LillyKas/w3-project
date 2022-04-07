@@ -66,19 +66,20 @@ let advanceTo = function(s) {
 let death = function(){
  
   let random = prompt("Please enter a number between 1 and 5");
-  let number = Math.trunc(Math.random()*5)
+  let number = Math.trunc(Math.random()*100)
   console.log( random + "and" + number)
   if (random == number) {
    
     advanceTo(scenario.ten);
     alert("yay you are lucky! The zombies are distracted by a distant sound and leave you alone. You can continue your journey!")
    
-  } else if(lifeCount >= 0){
-      console.log("hey")
-      alert("Oh no no no! The zombies break through the door and you become one of them....")
-      //elements.removeChild(lifeEl)
-      advanceTo(scenario.death);
-    
+  } else if(lifeCount > 0){  
+      //alert("Oh no no no! The zombies break through the door and you become one of them....")
+      document.getElementById('elements').removeChild(document.querySelector('.lifeItem'))
+      alert("Try Again!")
+      lifeCount--
+  } else if (lifeCount <= 0 ){
+    advanceTo(scenario.death);
   }
 }
 
