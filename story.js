@@ -137,7 +137,7 @@ let scenario = {
 
   seven: {
     image: "/assets/Cat-seventhScenario.png",
-    text: "You are now inside the  supermarket and find a whole bag of food. Your lucky day! In the bag you also find a secret map leading to a safe place on an island! Lucky day indeed! You head straight east! ",
+    text: "You are now inside the  supermarket and find a whole ba of food. Your lucky day! In the bag you also find a secret map leading to a safe place on an island! Lucky day indeed! You head straight east! ",
     buttons: [["Lets head east!", "advanceTo(scenario.ten)"]],
     inventory: "🥫🥫🥫",
   },
