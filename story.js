@@ -105,39 +105,39 @@ let scenario = {
   },
   two: {
     image: "/assets/Cat-secondScenario.png",
-    text: "Your name aka you awake by a sudden noise. Oh no! Zombies have entered your house and are coming for you. What do you do?",
+    text: "You are waking up by a sudden noise. Oh no! Zombies are entering your house and are coming for you. What are you doing?",
     buttons: [["I hide in my bathroom", "advanceTo(scenario.three)"],["I run out of the door", "advanceTo(scenario.four)"]],
     inventory: "",
   },
   three: {
     image: "/assets/Cat-thirdScenario.png",
-    text: "The zombies break through the door. You try to kill as many as you can with your toothbrush but its not enough.",
+    text: "The zombies are breaking through the door. You are trying to kill as many as you can with your toothbrush but its not enough...",
     buttons: [["climb through window  + run into the city", "advanceTo(scenario.five)"],["climb through window  + run into the forest", "advanceTo(scenario.six)"]],
     inventory: "",
   },
     four: {
         image: "/assets/Cat-fourthScenario.png",
-    text: "You stand on the street. Do you go to the forest to hide in a hut or do you go to the street and head for the city maybe you can find some",
-    buttons: [["go to the street and head out to the town", "advanceTo(scenario.five)"],["i head to the forest to look for a hut to hide", "advanceTo(scenario.six)"]],
+    text: "You are standing on the street. You can choose between going into the forest or into the city",
+    buttons: [["i am going into town", "advanceTo(scenario.five)"],["i head to the forest", "advanceTo(scenario.six)"]],
     inventory: "",
   },
     five: {
         image: "/assets/Cat-fifthScenario.png",
-    text: "You are now in town and you hear a noise. You have to options to hide. Go into the supermarket or into the weapon shop",
+    text: "You are now in town and you are hearing a noise. You have to options to hide. Go into the supermarket or into the weapon shop",
     buttons: [["Supermarket", "advanceTo(scenario.seven)"],["Weapon-Shop", "advanceTo(scenario.eight)"]],
     inventory: "",
   },
 
   six: {
     image: "/assets/Cat-sixthScenario.png",
-    text: "You enter the forest and start looking for the hut. After hours of searching you finally find it. Inside the hut is pure chaos but you find a map which leads to a secret and safe island. You are excited!",
+    text: "You are entering the forest and start looking for a place to sleep. After hours of searching you finally find a hut which seems to be safe. Inside the hut you find a map which leads to a secret and safe island. You are excited!",
     buttons: [["I must go there immeditaley! ", "advanceTo(scenario.ten)"],["First i rest. Tomorrow I shall start my journey!", "advanceTo(scenario.nine)"]],
     inventory: "",
   },
 
   seven: {
     image: "/assets/Cat-seventhScenario.png",
-    text: "You are now in the supermarket and find a whole back of food. Your lucky day! In the bag you also find a secret map leading to a safe place on an island! Lucky day indeed! You head straight east! ",
+    text: "You are now inside the  supermarket and find a whole bag of food. Your lucky day! In the bag you also find a secret map leading to a safe place on an island! Lucky day indeed! You head straight east! ",
     buttons: [["Lets head east!", "advanceTo(scenario.ten)"]],
     inventory: "🥫🥫🥫",
   },
