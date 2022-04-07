@@ -9,7 +9,7 @@ overflow: hidden;
 body{
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../w3-projekt/assets/background-street.jpg");
+    background-image: url("/assets/background-street.jpg");
 
     color: white;
     background-color: #24173d;
